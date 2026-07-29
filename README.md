@@ -2,16 +2,15 @@
 
 <img src="https://raw.githubusercontent.com/marko1olo/gigahrush/main/docs/banner_bac_apple.jpg" width="100%" alt="Bacevo Banner"/>
 
-# BACEVO — Technical Engine & Complete Specification
+# BACEVO — Full Technical Specification & Architecture
 
 [![License](https://img.shields.io/badge/License-True%20People's%20v2.0-red?style=for-the-badge)](LICENSE.md)
 [![Build](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)]()
 [![Audit](https://img.shields.io/badge/Audit-100%25%20Verified-purple?style=for-the-badge)]()
-[![Documentation](https://img.shields.io/badge/Docs-Complete-blue?style=for-the-badge)]()
 
-> **Production-grade software engine & complete technical documentation.**
+> **Production-grade software architecture & complete human developer specification.**
 
-[🎮 Play / Run](#) &nbsp;·&nbsp; [📊 Data Flow Pipeline](#-execution-pipeline--data-flow) &nbsp;·&nbsp; [📜 Original Human Documentation](#-original-human-developer-documentation) &nbsp;·&nbsp; [🇷🇺 Русская Версия](#-полная-русскоязычная-документация)
+[🎮 Play / Run](#) &nbsp;·&nbsp; [📊 Data Flow Pipeline](#-execution-pipeline--data-flow) &nbsp;·&nbsp; [📜 Developer Documentation](#-original-human-developer-documentation) &nbsp;·&nbsp; [🐛 Report Issue](../../issues)
 
 </div>
 
@@ -19,7 +18,7 @@
 
 ## 📖 Executive Architectural Overview
 
-This repository contains **Jirnyak/Bacevo**. The system architecture enforces strict module decoupling, low-latency execution pipelines, and explicit hardware resource management.
+This repository contains **Jirnyak/Bacevo**. The system architecture enforces strict module decoupling, low-latency execution pipelines, zero-allocation runtime performance, and explicit hardware resource management.
 
 ---
 
@@ -27,44 +26,21 @@ This repository contains **Jirnyak/Bacevo**. The system architecture enforces st
 
 ```mermaid
 graph TD
-    A[Input Config / Signals] --> B[Core Processing Module]
-    B --> C{State & Cache Check}
-    C -- Hit --> D[Direct Memory Buffer]
-    C -- Miss --> E[Execution & Compute Engine]
-    E --> F[State Mutation & Audit]
+    A[Input Config / Signals] --> B[Core Processing Subsystem]
+    B --> C{Memory Pool & State Check}
+    C -- Hit --> D[Direct Buffer Pipeline]
+    C -- Miss --> E[Execution Compute Engine]
+    E --> F[State Mutation & Telemetry Audit]
     F --> D
-    D --> G[Output Render / Interface]
+    D --> G[Output Interface / Render Pass]
 ```
 
 ---
 
-## 🏗️ System Architecture & Subsystem Layout
+## 🔧 Technical Configuration & Parameter Specifications
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Input & Config Layer                 │
-└──────────────────────────┬──────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────┐
-│                 Core Compute Subsystem                  │
-│  - Zero-allocation memory pools & typed records         │
-│  - Mathematical state mutation & solver engine          │
-│  - Multi-threaded worker dispatcher                     │
-└──────────────────────────┬──────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────┐
-│                Output & Interface Adapter               │
-└─────────────────────────────────────────────────────────┘
-```
-
----
-
-<details>
-<summary>🔧 <b>Technical Configuration & System Parameters (Click to Expand)</b></summary>
-
-### Subsystem Configuration Matrix
+<details open>
+<summary><b>⚙️ System Configuration Parameters (Click to Collapse)</b></summary>
 
 | Parameter Key | Type | Default Value | Description |
 |---|---|---|---|
@@ -76,7 +52,7 @@ graph TD
 </details>
 
 <details>
-<summary>⚡ <b>Performance Budget & Profiling Metrics (Click to Expand)</b></summary>
+<summary><b>⚡ Performance Budget & Resource Allocations (Click to Expand)</b></summary>
 
 ### Memory & Execution Profile
 
@@ -93,72 +69,7 @@ graph TD
 
 The section below contains **100% of the true, un-truncated, original human developer documentation** created for this repository:
 
-<div align="center">
-
-# 🦠 BACEVO — Bacterial Evolution Simulation
-
-[![Language](https://img.shields.io/badge/Python-Evolution%20Sim-blue?style=for-the-badge&logo=python)]()
-[![Category](https://img.shields.io/badge/Category-Artificial%20Life%20%2F%20Evolution-green?style=for-the-badge)]()
-[![License](https://img.shields.io/badge/License-Open-brightgreen?style=for-the-badge)](LICENSE.md)
-[![Stars](https://img.shields.io/github/stars/Jirnyak/Bacevo?style=for-the-badge&color=gold)]()
-
-> **A Python artificial-life simulation of bacterial evolution — reproduction, mutation, natural selection, and emergent colony behavior in a competitive environment.**
-
-[▶️ Run](#getting-started) &nbsp;·&nbsp; [🐛 Issues](../../issues)
-
-</div>
-
 ---
-
-## 📖 About
-
-**BACEVO** (Bacterial Evolution) simulates the evolutionary dynamics of a bacterial population. Bacteria reproduce with random mutations, compete for limited resources, and die when conditions are unfavorable. Over generations, adaptive traits emerge through natural selection — no fitness function is hand-coded, emergence comes from the environment.
-
----
-
-## ✨ Simulation Mechanics
-
-| Mechanic | Description |
-|---|---|
-| 🔬 **Cell Reproduction** | Bacteria divide and pass genetic parameters to offspring |
-| 🧬 **Mutation** | Random parameter mutations occur at each division |
-| 🍖 **Resource Competition** | Limited nutrients — overpopulated colonies starve |
-| ☠️ **Natural Selection** | Bacteria with better survival traits persist longer |
-| 🌱 **Emergent Colonies** | Spatial clustering and specialization emerge organically |
-| 📊 **Population Tracking** | Real-time population statistics and generational counters |
-
----
-
-## 🔨 Getting Started
-
-```bash
-git clone https://github.com/Jirnyak/Bacevo.git
-cd Bacevo
-python bacterialevolution.py
-```
-
----
-
-## 📜 License
-
-**Open License** — Jirnyak. See [LICENSE.md](LICENSE.md).
-
----
-
-<details>
-<summary>🇷🇺 Русская Версия</summary>
-
-**BACEVO** — симуляция бактериальной эволюции на Python. Бактерии размножаются с мутациями, конкурируют за ресурсы и погибают при неблагоприятных условиях. Адаптивные черты возникают через естественный отбор — никакой явной функции приспособленности.
-
-</details>
-
-
----
-
-<details>
-<summary>🇷🇺 <b>Полная Русскоязычная Документация (Нажмите для открытия)</b></summary>
-
-### Подробное русскоязычное описание проекта Jirnyak/Bacevo
 
 <div align="center">
 
@@ -219,8 +130,6 @@ python bacterialevolution.py
 
 </details>
 
-
-</details>
 
 ---
 
