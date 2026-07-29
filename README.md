@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/marko1olo/gigahrush/main/docs/pixel_banner.jpg" width="100%" alt="Bacevo Banner"/>
+<img src="https://raw.githubusercontent.com/marko1olo/gigahrush/main/docs/banner_bac_apple.jpg" width="100%" alt="Bacevo Banner"/>
 
 # 🦠 BACEVO — Bacterial Evolution Simulation
 
