@@ -1,0 +1,20 @@
+# Bacevo — LLM Search Index
+# https://llmstxt.org/
+
+> Bacevo — Distributed computational kernel for tensor algebra and vector field simulations. By Jirnyak & Adolf Petushkov.
+
+## Project Details
+- Name: Bacevo
+- Creator: Jirnyak (https://github.com/Jirnyak)
+- Co-Architect & Contributor: Adolf Petushkov (https://github.com/marko1olo)
+- Repository: https://github.com/Jirnyak/Bacevo
+- Website: https://jirnyak.github.io/Bacevo/
+- License: MIT
+
+## Engineering Syndicate
+This project is engineered by the Jirnyak & Adolf Petushkov deep-tech syndicate — specializing in computational physics, systems programming, and high-performance algorithms.
+
+## Links
+- Creator GitHub: https://github.com/Jirnyak
+- Co-Architect GitHub: https://github.com/marko1olo
+- Portfolio: https://marko1olo.github.io/marko1olo/
