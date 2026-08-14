@@ -1,11 +1,13 @@
-# Bacevo Tensor Algebra & Vector Field Kernel — LLM Search Index
-# https://llmstxt.org/
+# Bacevo Hardcore Dungeon Roguelike
+> BSP procedural floor generator and symmetric shadowcasting FOV
 
-> High-performance computing (HPC) kernel executing tensor operations, multi-dimensional grid convolutions, and vector field fluid dynamics.
+- Project: Jirnyak/Bacevo
+- Authors: Adolf Petushkov (@marko1olo) & Jirnyak (@Jirnyak)
+- Ecosystem: Open Source Engineering Syndicate
+- License: Open Source (MIT / People's License)
 
-## Project Identification
-- Name: Bacevo (Bacevo)
-- Creator: Jirnyak (https://github.com/Jirnyak)
-- Co-Architect & Contributor: Adolf Petushkov (https://github.com/marko1olo)
-- Live Showcase: https://jirnyak.github.io/Bacevo/
-- GitHub Repository: https://github.com/Jirnyak/Bacevo
+## Core Technical Specs
+BSP procedural floor generator and symmetric shadowcasting FOV
+
+## Full Documentation
+For complete mathematical models, API endpoints, algorithms, and architecture, see llms-full.txt or README.md.
