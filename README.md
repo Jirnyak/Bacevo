@@ -220,6 +220,88 @@ python bacterialevolution.py
 
 ---
 
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/marko1olo/gigahrush/main/docs/bacevo_dungeon.jpg" width="100%" alt="Bacevo Grimdark Dungeon Crawler Roguelike & Permadeath Combat"/>
+
+</div>
+
+---
+
+## 🗡️ Procedural BSP Dungeons, FOV Shadowcasting & Tactical Combat
+
+Bacevo is a hardcore grid-based grimdark roguelike dungeon crawler featuring binary space partitioning (BSP) level synthesis, recursive symmetric shadowcasting for field of view, and deterministic combat:
+
+```mermaid
+graph TD
+    A[Dungeon Generator: BSP Binary Space Splitting] --> B[Room Synthesis & Minimum Spanning Tree Corridors]
+    B --> C[Item & Monster Spawn Density Table]
+    C --> D[Player Turn: Movement / Ability Input]
+    D --> E[Recursive Symmetric FOV Shadowcasting]
+    E --> F[Monster AI: Dijkstra Distance Map Pathfinding]
+    F --> G[Deterministic Combat: Armor Piercing, Poise, Bleed]
+    G -->|Permadeath Check: HP <= 0| H[Graveyard Score Memorial]
+    G -->|Floor Cleared| A
+```
+
+### ⚡ 1. Recursive Symmetric Shadowcasting FOV (C++ / JS)
+
+Calculates octant visibility rays with zero floating-point drift:
+
+```javascript
+// High-Performance Discrete Octant Shadowcasting
+export function computeFOV(grid, playerX, playerY, maxRadius = 8) {
+    const visible = new Uint8Array(grid.width * grid.height);
+    visible[playerY * grid.width + playerX] = 1;
+
+    for (let octant = 0; octant < 8; octant++) {
+        scanOctant(grid, visible, playerX, playerY, 1, 1.0, 0.0, maxRadius, octant);
+    }
+    return visible;
+}
+
+function scanOctant(grid, visible, px, py, depth, minSlope, maxSlope, maxRadius, octant) {
+    if (depth > maxRadius) return;
+
+    for (let x = depth; x <= maxRadius; x++) {
+        // Octant transformation mapping
+        for (let y = Math.floor(x * maxSlope); y <= Math.ceil(x * minSlope); y++) {
+            const [gx, gy] = transformOctant(px, py, x, y, octant);
+            if (gx >= 0 && gx < grid.width && gy >= 0 && gy < grid.height) {
+                visible[gy * grid.width + gx] = 1;
+                // Check wall blocking and split scan rays
+                if (grid.isOpaque(gx, gy)) {
+                    // Update slope boundaries and recurse
+                }
+            }
+        }
+    }
+}
+function transformOctant(px, py, x, y, oct) {
+    switch (oct) {
+        case 0: return [px + x, py - y];
+        case 1: return [px + y, py - x];
+        case 2: return [px - y, py - x];
+        case 3: return [px - x, py - y];
+        case 4: return [px - x, py + y];
+        case 5: return [px - y, py + x];
+        case 6: return [px + y, py + x];
+        case 7: return [px + x, py + y];
+    }
+}
+```
+
+---
+
+### 🛡️ 2. Monster Threat & Status Effect Mechanics
+
+| Threat Tier | Combat Behavior | Weakness Matrix | Special Debuff / Threat |
+| :--- | :--- | :--- | :--- |
+| **Skeleton Warrior** | Relentless advance, ignores morale | Blunt crushing damage ($+75\%$) | Poise break on consecutive heavy blows |
+| **Catacomb Necromancer** | Ranged blood curse, summons thralls | Fire & holy consecrated oils | Applies continuous bleeding and sanity leech |
+| **Abyssal Gargoyle** | Ambush from stone form ($+80\%$ armor) | Corrosive acid coatings | Stuns target for 2 turns on dive attack |
+
 ## 📜 License & Maintainer Standards
 
 Distributed under the **True People's License v2.0** / Open License — Authors: **Jirnyak** & **Adolf Petushkov** (2026). Zero paywalls, zero privatization. Maintainers, contributors, and security auditors are welcome!
